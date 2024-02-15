@@ -1,0 +1,16 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+$phoneNumber = $block->getStorePhoneNumber();
+?>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Macademy_CustomCheckout/js/view/logged-in-helper": {
+                "storePhoneNumber": "<?php echo $phoneNumber; ?>"
+        }
+    }
+}
+</script>
+
+

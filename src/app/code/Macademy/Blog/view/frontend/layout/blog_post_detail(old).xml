@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page layout="2columns-right"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="main">
+            <block name="blog.post.detail" template="Macademy_Blog::post/detail.phtml" />
+            <container htmlTag="h1" htmlId="blog-header">
+                <block name="blog.post.detail.sidebar.extra" template="Macademy_Blog::post/detail_sidebar.phtml" />
+            </container>
+        </referenceContainer>
+        <referenceContainer name="sidebar.main">
+            <block name="blog.post.detail.sidebar" template="Macademy_Blog::post/detail_sidebar.phtml" />
+        </referenceContainer>
+<!--        <move element="wishlist_sidebar" destination="sidebar.additional" before="-" />-->
+        <referenceBlock name="catalog.compare.sidebar" display="false" />
+        <referenceBlock name="wishlist_sidebar" template="Macademy_Blog::wishlist/wishlist_sidebar.phtml" />
+    </body>
+</page>

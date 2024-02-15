@@ -1,0 +1,1 @@
+/var/www/html/app/code/Macademy/JsFun/view/frontend/web/js/vue-test.js

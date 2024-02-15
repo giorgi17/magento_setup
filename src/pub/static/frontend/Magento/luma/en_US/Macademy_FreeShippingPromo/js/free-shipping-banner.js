@@ -1,0 +1,1 @@
+/var/www/html/app/code/Macademy/FreeShippingPromo/view/frontend/web/js/free-shipping-banner.js

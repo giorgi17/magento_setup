@@ -1,0 +1,1 @@
+/var/www/html/app/code/Macademy/CustomCheckout/view/frontend/web/js/view/email.js

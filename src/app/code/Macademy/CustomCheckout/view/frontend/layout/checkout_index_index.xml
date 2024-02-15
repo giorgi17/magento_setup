@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Macademy\CustomCheckout\Block\StoreInfo" name="store_info_block" template="Macademy_CustomCheckout::store_info.phtml"/>
+            <referenceBlock name="checkout.root">
+<!--                <block class="Macademy\CustomCheckout\Block\StoreInfo" name="store_info_block" template="Macademy_CustomCheckout::store_info.phtml"/>-->
+
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="checkout" xsi:type="array">
+                                <item name="children" xsi:type="array">
+                                    <item name="loggedInHelper" xsi:type="array">
+                                        <item name="component" xsi:type="string">Macademy_CustomCheckout/js/view/logged-in-helper</item>
+                                        <item name="displayArea" xsi:type="string">authentication</item>
+                                    </item>
+                                    <item name="steps" xsi:type="array">
+                                        <item name="children" xsi:type="array">
+                                            <item name="email-step" xsi:type="array">
+                                                <item name="component" xsi:type="string">uiComponent</item>
+                                                <item name="children" xsi:type="array">
+                                                    <item name="email" xsi:type="array">
+                                                        <item name="component" xsi:type="string">Macademy_CustomCheckout/js/view/email</item>
+                                                        <item name="config" xsi:type="array">
+                                                            <item name="sortOrder" xsi:type="string">1</item>
+                                                        </item>
+                                                        <item name="children" xsi:type="array">
+                                                            <item name="customer-email" xsi:type="array">
+<!--                                                                <item name="component" xsi:type="string">Magento_Checkout/js/view/form/element/email</item>-->
+                                                                <item name="component" xsi:type="string">Macademy_CustomCheckout/js/view/form/element/email</item>
+                                                                <item name="config" xsi:type="array">
+                                                                    <item name="template" xsi:type="string">Macademy_CustomCheckout/form/element/email</item>
+                                                                </item>
+                                                                <item name="displayArea" xsi:type="string">customer-email</item>
+                                                                <item name="tooltip" xsi:type="array">
+                                                                    <item name="description" xsi:type="string" translate="true">We'll send your order confirmation here.</item>
+                                                                </item>
+                                                                <item name="children" xsi:type="array">
+                                                                    <item name="before-login-form" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">uiComponent</item>
+                                                                        <item name="displayArea" xsi:type="string">before-login-form</item>
+                                                                        <item name="children" xsi:type="array">
+                                                                            <!-- before login form fields -->
+                                                                        </item>
+                                                                    </item>
+                                                                    <item name="additional-login-form-fields" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">uiComponent</item>
+                                                                        <item name="displayArea" xsi:type="string">additional-login-form-fields</item>
+                                                                        <item name="children" xsi:type="array">
+                                                                            <!-- additional login form fields -->
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                            <item name="shipping-step" xsi:type="array">
+                                                <item name="children" xsi:type="array">
+                                                    <item name="shippingAddress" xsi:type="array">
+                                                        <item name="config" xsi:type="array">
+                                                            <item name="sortOrder" xsi:type="string">2</item>
+                                                        </item>
+                                                        <item name="children" xsi:type="array">
+                                                            <item name="customer-email" xsi:type="array">
+                                                                <item name="config" xsi:type="array">
+                                                                    <item name="componentDisabled" xsi:type="boolean">true</item>
+                                                                </item>
+                                                            </item>
+                                                            <item name="shipping-address-fieldset" xsi:type="array">
+                                                                <item name="children" xsi:type="array">
+                                                                    <item name="city" xsi:type="array">
+                                                                        <item name="sortOrder" xsi:type="string">72</item>
+                                                                    </item>
+                                                                    <item name="region_id" xsi:type="array">
+                                                                        <item name="sortOrder" xsi:type="string">74</item>
+                                                                    </item>
+                                                                    <item name="postcode" xsi:type="array">
+                                                                        <item name="sortOrder" xsi:type="string">76</item>
+                                                                    </item>
+                                                                    <item name="telephone" xsi:type="array">
+                                                                        <item name="validation" xsi:type="array">
+                                                                            <item name="validate-phoneStrict" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                            <item name="doctor-step" xsi:type="array">
+                                                <item name="component" xsi:type="string">uiComponent</item>
+                                                <item name="children" xsi:type="array">
+                                                    <item name="doctor" xsi:type="array">
+                                                        <item name="component" xsi:type="string">Macademy_CustomCheckout/js/view/doctor</item>
+                                                        <item name="config" xsi:type="array">
+                                                            <item name="sortOrder" xsi:type="string">3</item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                            <item name="billing-step" xsi:type="array">
+                                                <item name="children" xsi:type="array">
+                                                    <item name="payment" xsi:type="array">
+                                                        <item name="config" xsi:type="array">
+                                                            <item name="sortOrder" xsi:type="string">4</item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+
+                                    <item name="sidebar" xsi:type="array">
+                                        <item name="config" xsi:type="array">
+                                            <item name="template" xsi:type="string">Macademy_CustomCheckout/sidebar</item>
+                                        </item>
+                                        <item name="children" xsi:type="array">
+                                            <item name="discount" xsi:type="array">
+                                                <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/discount</item>
+                                                <item name="config" xsi:type="array">
+                                                    <item name="displayArea" xsi:type="string">after-summary</item>
+                                                </item>
+                                                <item name="children" xsi:type="array">
+                                                    <item name="errors" xsi:type="array">
+                                                        <item name="sortOrder" xsi:type="string">0</item>
+                                                        <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/discount-messages</item>
+                                                        <item name="displayArea" xsi:type="string">messages</item>
+                                                    </item>
+                                                    <item name="captcha" xsi:type="array">
+                                                        <item name="component" xsi:type="string">Magento_SalesRule/js/view/payment/captcha</item>
+                                                        <item name="displayArea" xsi:type="string">captcha</item>
+                                                        <item name="formId" xsi:type="string">sales_rule_coupon_request</item>
+                                                        <item name="configSource" xsi:type="string">checkoutConfig</item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                            <item name="summary" xsi:type="array">
+                                                <item name="children" xsi:type="array">
+                                                    <item name="promo_text" xsi:type="array">
+                                                        <item name="component" xsi:type="string">Macademy_CustomCheckout/js/view/promo-text</item>
+                                                        <item name="config" xsi:type="array">
+                                                            <item name="sortOrder" xsi:type="string">1</item>
+                                                        </item>
+                                                    </item>
+                                                    <item name="cart_items" xsi:type="array">
+                                                        <item name="component" xsi:type="string">Macademy_CustomCheckout/js/view/summary/cart-items</item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,35 @@
+<li id="doctor" class="checkout-doctor" data-bind="fadeVisible: isVisible">
+    <div id="checkout-step-doctor"
+         class="step-content"
+         data-role="content"
+         role="tabpanel"
+         aria-hidden="false">
+        <form data-bind="submit: navigateToNextStep" novalidate="novalidate">
+            <fieldset id="doctor-fieldset" class="fieldset">
+                    <div class="field required">
+                        <label class="label" for="doctor-name"><span data-bind="i18n: 'Doctor\'s name'"></span></label>
+                            <input class="required-entry"
+                                   type="text"
+                                   data-bind="textInput: doctorName"
+                                   name="doctor-name"
+                                   id="doctor-name"/>
+                    </div>
+
+                    <div class="field required">
+                        <label class="label" for="doctor-phone-number"><span data-bind="i18n: 'Doctor\'s phone number'"></span></label>
+                            <input class="required-entry validate-phoneStrict"
+                                   type="text"
+                                   data-bind="textInput: doctorPhoneNumber"
+                                   name="doctor-phone-number"
+                                   id="doctor-phone-number"/>
+                    </div>
+
+                <div class="primary">
+                    <button data-role="opc-continue" type="submit" class="button action continue primary">
+                        <span translate="'Next'"></span>
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</li>

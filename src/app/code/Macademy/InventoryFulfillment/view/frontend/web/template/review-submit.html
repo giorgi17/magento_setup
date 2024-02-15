@@ -1,0 +1,45 @@
+<div class="review-submit" data-bind="visible: boxConfigurationsIsSuccess">
+    <h2 data-bind="i18n: 'Review & Submit'"></h2>
+   <!-- ko i18n: 'Please review the box configurations before submitting.' --><!-- /ko -->
+
+    <form data-bind="submit: handleSubmit, attr: { action: getUrl() }" method="post">
+        <table>
+            <thead>
+            <tr>
+                <th data-bind="i18n: 'Number of boxes'"></th>
+                <th data-bind="i18n: 'Shipment weight'"></th>
+                <th data-bind="i18n: 'Billable weight'"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>
+                    <span data-bind="text: numberOfBoxes"></span>
+                </td>
+                <td>
+                    <span data-bind="text: shipmentWeight"></span>
+                    <!-- ko i18n: 'lb.' --><!-- /ko -->
+                </td>
+                <td>
+                    <span data-bind="text: billableWeight"></span>
+                    <!-- ko i18n: 'lb.' --><!-- /ko -->
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="review-submit__submit">
+            <div class="review-submit__terms-and-conditions">
+                <input type="checkbox" data-bind="checked: isTermsChecked">
+                <!-- ko i18n: 'I agree to Terms & Conditions.' --><!-- /ko -->
+            </div>
+            <button type="submit" class="action primary" data-bind="enable: canSubmit()">
+                <!-- ko i18n: 'Accept shipping plan' --><!-- /ko -->
+            </button>
+        </div>
+
+        <input type="hidden" name="boxConfigurations" data-bind="value: ko.toJSON(boxConfigurations)" />
+        <input type="hidden" name="sku" data-bind="value: sku()" />
+    </form>
+</div>
