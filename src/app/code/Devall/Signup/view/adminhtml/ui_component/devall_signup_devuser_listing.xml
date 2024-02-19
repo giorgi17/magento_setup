@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">devall_signup_devuser_listing.devall_signup_devuser_listing_data_source</item>
+        </item>
+    </argument>
+
+    <settings>
+        <deps>
+            <dep>devall_signup_devuser_listing.devall_signup_devuser_listing_data_source</dep>
+        </deps>
+        <spinner>devall_signup_devuser_columns</spinner>
+    </settings>
+
+    <dataSource name="devall_signup_devuser_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <updateUrl path="mui/index/render"></updateUrl>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">id</param>
+            </storageConfig>
+        </settings>
+        <aclResource>Devall_Signup::devall</aclResource>
+        <dataProvider name="devall_signup_devuser_listing_data_source"
+                      class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+
+    <columns name="devall_signup_devuser_columns">
+        <column name="id">
+            <settings>
+                <label translate="true">ID</label>
+                <filter>textRange</filter>
+            </settings>
+        </column>
+        <column name="name">
+            <settings>
+                <label translate="true">Name</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+        <column name="date" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <label translate="true">Date</label>
+                <filter>dateRange</filter>
+            </settings>
+        </column>
+    </columns>
+</listing>

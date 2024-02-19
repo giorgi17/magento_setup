@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+            id="Devall_Signup::devall"
+            title="Devall"
+            translate="title"
+            module="Devall_Signup"
+            parent="Magento_Customer::customer"
+            resource="Devall_Signup::devall"
+            sortOrder="900"
+        />
+        <add
+            id="Devall_Signup::users"
+            title="Devall Users"
+            translate="title"
+            module="Devall_Signup"
+            parent="Devall_Signup::devall"
+            resource="Devall_Signup::users"
+            action="devall/user"
+        />
+    </menu>
+</config>
