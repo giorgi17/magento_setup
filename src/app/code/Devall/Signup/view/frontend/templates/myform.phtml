@@ -1,0 +1,24 @@
+<?php
+/** @var \Devall\Signup\Block\MyForm $block */
+$devallUsersFormEnabled = $block->isFormEnabled();
+?>
+
+<?php if ($devallUsersFormEnabled): ?>
+    <form action="<?php echo $block->getUrl('signup/account/create'); ?>" method="post">
+        <div class="field required">
+            <label class="label" for="name">Name:</label>
+            <input type="text" name="name" placeholder="Your Name" required>
+        </div>
+        <br />
+        <div class="field required">
+            <label class="label" for="date">Date:</label>
+            <input type="date" name="date" placeholder="Your Date" required>
+        </div>
+
+        <br /><br />
+
+        <button type="submit">Submit</button>
+    </form>
+<?php else : ?>
+    <p class="devall-error">Devall user signup form is disabled.</p>
+<?php endif; ?>

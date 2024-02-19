@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Customer::customer">
+                    <resource id="Devall_Signup::devall" title="Devall" translate="title" sortOrder="900">
+                        <resource id="Devall_Signup::users" title="Devall Users" translate="title" sortOrder="900" />
+                    </resource>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                        <resource id="Devall_Signup::config" title="Devall_Signup Config" sortOrder="100"/>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
