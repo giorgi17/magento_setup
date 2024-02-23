@@ -1,0 +1,16 @@
+<!-- ko if: fetchedData.city -->
+<div class="single-data-display">
+    <ul>
+        <li>City: <span data-bind="text: fetchedData.city"></span></li>
+        <li>Country: <span data-bind="text: fetchedData.country"></span></li>
+        <li>Description: <span data-bind="text: fetchedData.description"></span></li>
+        <li>Temperature (°C): <span data-bind="text: fetchedData.temperature"></span></li>
+        <li>Feels Like (°C): <span data-bind="text: fetchedData.feelsLike"></span></li>
+        <li>Pressure (hpa): <span data-bind="text: fetchedData.pressure"></span></li>
+        <li>Humidity (%): <span data-bind="text: fetchedData.humidity"></span></li>
+        <li>Wind Speed (meter/sec): <span data-bind="text: fetchedData.windspeed"></span></li>
+        <li>Sunrise (UTC): <span data-bind="text: fetchedData.sunrise"></span></li>
+        <li>Sunset (UTC): <span data-bind="text: fetchedData.sunset"></span></li>
+    </ul>
+</div>
+<!-- /ko -->

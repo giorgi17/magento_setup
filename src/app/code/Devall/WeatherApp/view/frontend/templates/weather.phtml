@@ -1,0 +1,33 @@
+<?php
+/** @var $block Magento\Framework\View\Element\Template */
+?>
+
+
+<div id="devall-weather">
+    <h1>Weather in your city</h1>
+
+    <div id="city-lookup" data-bind="scope: 'cityLookup'">
+        <!-- ko template: getTemplate() --> <!-- /ko -->
+    </div>
+
+    <div id="single-data-display" data-bind="scope: 'singleDataDisplay'">
+        <!-- ko template: getTemplate() --> <!-- /ko -->
+    </div>
+
+    <form id="pdfForm" method="post" action="weather/pdf/create" target="_blank" style="display: none;">
+        <input type="hidden" name="gridWeatherData" value="This is the grid data">
+    </form>
+
+    <form class="weather-historical-data-print" method="post" action="weather/pdf/create">
+        <h3>Weather Historical Data</h3>
+        <button type="submit">Print All</button>
+    </form>
+</div>
+
+<script type="text/x-magento-init">
+    {
+      "#devall-weather": {
+        "Magento_Ui/js/core/app": <?= $block->getJsLayout(); ?>
+    }
+  }
+</script>
