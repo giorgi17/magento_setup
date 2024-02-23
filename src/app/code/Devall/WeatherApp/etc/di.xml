@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <virtualType name="Devall\WeatherApp\Model\ResourceModel\WeatherHistorical\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">devall_weatherapp_historical_data</argument>
+            <argument name="resourceModel" xsi:type="string">Devall\WeatherApp\Model\ResourceModel\WeatherHistorical</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="devall_weather_historical_listing_data_source"
+                      xsi:type="string">Devall\WeatherApp\Model\ResourceModel\WeatherHistorical\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

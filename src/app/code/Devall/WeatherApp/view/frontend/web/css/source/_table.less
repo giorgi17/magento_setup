@@ -1,0 +1,72 @@
+@import "_table-pagination.less";
+@import "_table-filter.less";
+@import "_datepicker.less";
+
+.admin__data-grid-wrap {
+    margin-bottom: 2rem;
+    max-width: 100%;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+}
+
+//  Ascend & Descend sort marker
+.data-grid-th {
+    &._sortable {
+        &._ascend,
+        &._descend {
+            padding-right: 2.7rem;
+        }
+
+        &._ascend {
+            &:after {
+                content: '\2193';
+            }
+        }
+
+        &._descend {
+            &:after {
+                content: '\2191';
+            }
+        }
+
+        &._ascend:after, &._descend:after {
+            position: absolute;
+            margin-top: -1em;
+            right: 1rem;
+            top: 55%;
+        }
+    }
+}
+
+.data-row {
+    border-bottom: 1px solid black;
+}
+
+.data-grid {
+    th {
+        position: relative;
+        background-color: #3c75be;
+        border: 0.1rem solid #8a837f;
+        border-left-color: transparent;
+        color: #ffffff;
+        font-weight: 600;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    td {
+        background-color: #ffffff;
+        border-left: 0.1rem dashed #d6d6d6;
+        border-right: 0.1rem dashed #d6d6d6;
+        color: #303030;
+        padding: 1rem 1rem;
+    }
+
+    td:last-child {
+        border-right-style: solid;
+    }
+
+    td:first-child {
+        border-left-style: solid;
+    }
+}
