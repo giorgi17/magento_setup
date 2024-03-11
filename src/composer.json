@@ -20,6 +20,7 @@
     },
     "version": "2.4.6-p3",
     "require": {
+        "macademy/module-linkedin": "@dev",
         "magento/composer-dependency-version-audit-plugin": "~0.1",
         "magento/composer-root-update-plugin": "~2.0",
         "magento/module-bundle-sample-data": "100.4.*",
@@ -102,6 +103,10 @@
         {
             "type": "composer",
             "url": "https://repo.magento.com/"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/giorgi17/module-linkedin.git"
         }
     ],
     "extra": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7507c30517f67d2d0f8f8f2783162090",
+    "content-hash": "f5a48ac283ce891b7ea42d015585c8dd",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -4995,6 +4995,34 @@
                 }
             ],
             "time": "2023-10-17T14:13:20+00:00"
+        },
+        {
+            "name": "macademy/module-linkedin",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/giorgi17/module-linkedin.git",
+                "reference": "7771a6a0a2a1b6ec18c0779257a40d6ff9abef06"
+            },
+            "require": {
+                "magento/magento-composer-installer": "*",
+                "php": "^8.1"
+            },
+            "default-branch": true,
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Macademy\\Linkedin\\": ""
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "Custom extension, Linkedin. ",
+            "time": "2024-03-11T12:49:39+00:00"
         },
         {
             "name": "magento/adobe-stock-integration",
@@ -27594,7 +27622,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "macademy/module-linkedin": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
