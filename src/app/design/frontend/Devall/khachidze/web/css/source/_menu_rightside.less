@@ -1,0 +1,45 @@
+.header-menu-mini-rightside {
+    .flex-center();
+    gap: 30px;
+
+    .switcher-language {
+        color: #8f8f8f;
+    }
+
+    .switcher-currency {
+        color: #8f8f8f;
+    }
+
+    .minicart-wrapper {
+        padding: 10px 20px;
+        &.active, &:hover {
+            background-color: #7bae23;
+            .price, .counter.qty {
+                color: white !important;
+            }
+            a {
+                svg {
+                    fill: white !important;
+                }
+            }
+        }
+
+        .action.showcart {
+            .flex-center();
+            gap: 5px;
+            &:before {
+                display: none;
+            }
+
+            &.active {
+                svg {
+                    fill: white;
+                }
+            }
+
+            svg {
+                fill: #b8b8b8;
+            }
+        }
+    }
+}

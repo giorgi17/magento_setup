@@ -1,0 +1,108 @@
+.block-search {
+    width: 35px;
+    #search_mini_form {
+        position: relative;
+        .flex-center();
+        justify-content: flex-end;
+        gap: 10px;
+    }
+    .actions {
+        width: 35px;
+        height: 35px;
+    }
+    .action.search {
+        position: relative;
+        border: 2px solid black;
+        border-radius: 0;
+        padding: 0 7px;
+        display: block;
+        right: 0;
+    }
+    .input-text {
+        height: 35px;
+        border: 2px solid #e5e5e5;
+        font-style: italic;
+        color: #555555;
+    }
+    &:hover {
+        .field.search {
+            display: block;
+        }
+    }
+}
+
+.field.search {
+    position: absolute;
+    right: 40px;
+    width: 260px;
+    display: none;
+}
+
+.action.search {
+    opacity: 1 !important;
+}
+
+// Responsive
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block.block-search {
+        height: 50px;
+        width: auto !important;
+        margin-top: 30px !important;
+        margin-left: 60px;
+
+        .form.minisearch {
+            .field.search {
+                display: block !important;
+                position: relative !important;
+                right: 0 !important;
+
+                label {
+                    display: none !important;
+                }
+
+                .control {
+                    border: unset !important;
+                    padding: 0 !important;
+
+                    #search {
+                        margin: 0 !important;
+                        position: static !important;
+                    }
+                }
+            }
+
+            .actions {
+                position: absolute;
+                top: 3px;
+                right: -20px;
+
+                button {
+                    border: unset !important;
+                    padding: 0 !important;
+                    background-color: unset !important;
+
+                    &:before {
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                        font-size: 17px;
+                        line-height: 28px;
+                        color: #757575;
+                        content: '\e615';
+                        font-family: 'luma-icons';
+                        margin: 0 10px 0 0;
+                        vertical-align: middle;
+                        display: inline-block;
+                        font-weight: normal;
+                        overflow: hidden;
+                        speak: none;
+                        text-align: center;
+                    }
+
+                    span {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+}

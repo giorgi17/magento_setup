@@ -1,0 +1,18 @@
+.mobile-header-menu {
+    .nav-toggle, .logo {
+        display: none;
+    }
+}
+
+
+// Responsive
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .mobile-header-menu {
+        height: 60px;
+
+        .logo {
+            display: block !important;
+            transform: unset !important;
+        }
+    }
+}
