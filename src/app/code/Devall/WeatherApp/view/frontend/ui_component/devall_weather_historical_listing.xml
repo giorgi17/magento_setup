@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">devall_weather_historical_listing.devall_weather_historical_listing_data_source</item>
+        </item>
+    </argument>
+
+    <settings>
+        <deps>
+            <dep>devall_weather_historical_listing.devall_weather_historical_listing_data_source</dep>
+        </deps>
+        <spinner>devall_weather_historical_columns</spinner>
+    </settings>
+
+    <dataSource name="devall_weather_historical_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <updateUrl path="mui/index/render"></updateUrl>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">id</param>
+            </storageConfig>
+        </settings>
+        <dataProvider name="devall_weather_historical_listing_data_source"
+                      class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+
+    <listingToolbar name="listing_top">
+        <paging name="listing_paging"/>
+        <filters name="listing_filters"/>
+    </listingToolbar>
+
+    <columns name="devall_weather_historical_columns">
+        <column name="city">
+            <settings>
+                <label translate="true">City</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+        <column name="country">
+            <settings>
+                <label translate="true">Country</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+        <column name="description">
+            <settings>
+                <label translate="true">Description</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+        <column name="temperature">
+            <settings>
+                <label translate="true">Temperature</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+        <column name="feelsLike">
+            <settings>
+                <label translate="true">Feels Like</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+        <column name="pressure">
+            <settings>
+                <label translate="true">Pressure</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+        <column name="humidity">
+            <settings>
+                <label translate="true">Humidity</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+        <column name="windspeed">
+            <settings>
+                <label translate="true">Windspeed</label>
+                <filter>text</filter>
+            </settings>
+        </column>
+        <column name="sunrise" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <label translate="true">Sunrise (UTC)</label>
+                <filter>dateRange</filter>
+            </settings>
+        </column>
+        <column name="sunset" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <label translate="true">Sunset (UTC)</label>
+                <filter>dateRange</filter>
+            </settings>
+        </column>
+        <column name="created_at" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <label translate="true">Checked on</label>
+                <filter>dateRange</filter>
+            </settings>
+        </column>
+    </columns>
+</listing>

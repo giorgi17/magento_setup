@@ -348,6 +348,7 @@ return [
         'Magento_WishlistSampleData' => 1,
         'Devall_Linkedin' => 1,
         'Devall_Signup' => 1,
+        'Devall_WeatherApp' => 1,
         'Juno_Theme' => 1,
         'Macademy_Blog' => 1,
         'Macademy_BlogExtra' => 1,

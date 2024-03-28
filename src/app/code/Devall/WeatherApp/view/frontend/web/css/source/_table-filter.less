@@ -1,0 +1,199 @@
+.data-grid-filters-actions-wrap {
+    float: right;
+
+    .data-grid-filters-action-wrap {
+        float: left;
+        padding-left: 2rem;
+
+        .action-default {
+            border: 1px solid #adadad;
+            border-radius: 0;
+            display: inline-block;
+            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            line-height: 1.36;
+            padding: 0.7rem 2.1rem;
+            text-align: center;
+            vertical-align: baseline;
+            margin-bottom: 1rem;
+            background: #DBDBDB;
+            color: #514943;
+
+            &:before {
+                color: #41362f;
+                content: '\e605';
+                font-size: 1.8rem;
+                margin-right: 0.4rem;
+                position: relative;
+                top: -1px;
+                vertical-align: top;
+                -webkit-font-smoothing: antialiased;
+                font-family: 'Admin Icons';
+                font-style: normal;
+                font-weight: normal;
+                line-height: 1;
+                speak: none;
+            }
+        }
+    }
+}
+
+.admin__data-grid-filters-wrap {
+    opacity: 0;
+    visibility: hidden;
+    clear: both;
+    font-size: 1.3rem;
+    transition: opacity .3s ease;
+    height: 0;
+
+    &._show {
+        opacity: 1;
+        visibility: visible;
+        border-bottom: 1px solid #cccccc;
+        border-top: 1px solid #cccccc;
+        margin-bottom: 0.7rem;
+        padding: 3.6rem 0 3rem;
+        position: relative;
+        top: -1px;
+        z-index: 280;
+        height: auto;
+    }
+
+    .admin__data-grid-filters-footer {
+        display: block;
+
+        .admin__footer-main-actions {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+
+            .action-tertiary {
+                color: #007bdb;
+                background-color: transparent;
+                border-color: transparent;
+                text-shadow: none;
+                border-radius: 0;
+                display: inline-block;
+                font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size: 1.4rem;
+                font-weight: 600;
+                line-height: 1.36;
+                padding: 0.6rem 1em 0.6rem;
+                text-align: center;
+                vertical-align: baseline;
+
+                &:hover {
+                    transition: all .2s linear;
+                    background-color: #3D75BE;
+                    color: white;
+                }
+            }
+
+            .action-secondary {
+                border-radius: 0;
+            }
+        }
+    }
+}
+
+.admin__data-grid-filters-current {
+    margin-bottom: 20px;
+}
+
+.admin__data-grid-filters {
+    border: none;
+
+    .admin__filters-legend {
+        clip: rect(0, 0, 0, 0);
+        overflow: hidden;
+        position: absolute;
+        display: none;
+        visibility: hidden;
+    }
+
+    .admin__form-field {
+        display: inline-block;
+        border: 0;
+        margin-bottom: 2em;
+        padding: 0 2rem;
+        vertical-align: top;
+        width: calc(100% / 4 - 4px);
+
+        .admin__form-field-legend {
+            display: block;
+            font-weight: bold;
+            margin: 0 0 0.3rem;
+            text-align: left;
+        }
+
+        .admin__form-field-label {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 0 0 0.3rem;
+            text-align: left;
+        }
+
+        .admin__form-field {
+            display: block;
+            float: none;
+            margin-bottom: 1.5rem;
+            padding-left: 0;
+            padding-right: 0;
+            width: auto;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .admin__form-field-label {
+                border: 1px solid transparent;
+                float: left;
+                font-weight: normal;
+                line-height: 1.36;
+                margin-bottom: 0;
+                padding-bottom: 0.6rem;
+                padding-right: 1em;
+                padding-top: 0.6rem;
+                width: 25%;
+            }
+
+            .admin__form-field-control {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 25%;
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    right: 5px;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    font-size: 2.1rem;
+                    line-height: 32px;
+                    color: #514943;
+                    content: '\e627';
+                    font-family: 'Admin Icons';
+                    vertical-align: middle;
+                    display: inline-block;
+                    font-weight: normal;
+                    overflow: hidden;
+                    speak: none;
+                    text-align: center;
+                    cursor: pointer;
+                }
+
+                .admin__control-text {
+                    width: 100%;
+                }
+
+                ._has-datepicker {
+                    padding-right: 3.5rem;
+                }
+            }
+        }
+    }
+}

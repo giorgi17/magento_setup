@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="main">
+            <block name="devall.weather" template="Devall_WeatherApp::weather.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="cityLookup" xsi:type="array">
+                                <item name="component" xsi:type="string">
+                                    Devall_WeatherApp/js/city-lookup
+                                </item>
+                                <item name="config" xsi:type="array">
+                                    <item name="template" xsi:type="string">Devall_WeatherApp/city-lookup</item>
+                                </item>
+                            </item>
+
+                            <item name="singleDataDisplay" xsi:type="array">
+                                <item name="component" xsi:type="string">
+                                    Devall_WeatherApp/js/single-data-display
+                                </item>
+                                <item name="config" xsi:type="array">
+                                    <item name="template" xsi:type="string">Devall_WeatherApp/single-data-display</item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+
+            <uiComponent name="devall_weather_historical_listing" />
+        </referenceContainer>
+    </body>
+</page>

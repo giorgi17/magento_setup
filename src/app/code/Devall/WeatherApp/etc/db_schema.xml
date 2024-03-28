@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="devall_weatherapp_historical_data" resource="default" engine="innodb" comment="Devall WeatherApp historical data Table">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true" comment="ID" />
+        <column xsi:type="varchar" name="city" nullable="false" length="255" comment="City"/>
+        <column xsi:type="varchar" name="country" nullable="false" length="255" comment="Country"/>
+        <column xsi:type="varchar" name="description" nullable="false" length="255" comment="Description"/>
+        <column xsi:type="float" name="temperature" nullable="false" scale="2" precision="10" comment="Temperature"/>
+        <column xsi:type="float" name="feelsLike" nullable="false" scale="2" precision="10" comment="Feels Like"/>
+        <column xsi:type="float" name="pressure" nullable="false" scale="2" precision="10" comment="Pressure"/>
+        <column xsi:type="float" name="humidity" nullable="false" scale="2" precision="10" comment="Humidity"/>
+        <column xsi:type="float" name="windspeed" nullable="false" scale="2" precision="10" comment="Windspeed"/>
+        <column xsi:type="timestamp" name="sunrise" nullable="false" comment="Sunrise"/>
+        <column xsi:type="timestamp" name="sunset" nullable="false" comment="Sunset"/>
+
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Devall WeatherApp historical data Created At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+        </constraint>
+    </table>
+</schema>

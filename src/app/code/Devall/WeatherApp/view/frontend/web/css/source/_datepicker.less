@@ -1,0 +1,134 @@
+.ui-datepicker {
+    box-sizing: border-box;
+    display: none;
+    opacity: 0.98;
+    padding: 23px 20px;
+    width: auto;
+    z-index: 999999 !important;
+
+    &:before {
+        background: #ffffff;
+        border: 1px solid #007bdb;
+        bottom: 3px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        content: '';
+        display: block;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 3px;
+        z-index: 0;
+    }
+}
+
+.ui-datepicker-header {
+    padding: 0 0 10px;
+    position: relative;
+    z-index: 1;
+
+    .ui-datepicker-prev, .ui-datepicker-next {
+        cursor: pointer;
+        line-height: 3rem;
+        position: absolute;
+        top: 0;
+    }
+
+    .ui-datepicker-prev:before, .ui-datepicker-next:before {
+        color: #514943;
+        display: inline-block;
+        font-size: 34px;
+    }
+
+    .ui-datepicker-prev {
+        left: 0;
+
+        &:before {
+            content: '\2039';
+        }
+
+        .ui-icon {
+            display: none;
+        }
+    }
+
+    .ui-datepicker-next {
+        right: 0;
+
+        &:before {
+            content: '\203A';
+        }
+
+        .ui-icon {
+            display: none;
+        }
+    }
+
+    .ui-datepicker-title {
+        line-height: 1.8em;
+        margin: 0 2.3em;
+        text-align: center;
+
+        .ui-datepicker-month {
+            margin-right: 6%;
+            width: 47%;
+        }
+
+        .ui-datepicker-year {
+            width: 47%;
+        }
+    }
+}
+
+.ui-datepicker-calendar {
+    background: #ffffff;
+    border: 0;
+    border-collapse: collapse;
+    position: relative;
+    z-index: 1;
+
+    thead {
+        tr {
+            th {
+                span {
+                    font-size: 12px;
+                    font-weight: 700;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                background: transparent;
+                border: 1px solid #adadad;
+                padding: 0;
+
+                a {
+                    box-sizing: border-box;
+                    color: #514943;
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 38px;
+                    text-align: center;
+                    text-decoration: none;
+                    width: 38px;
+
+                    &.ui-state-active {
+                        background: #514943;
+                        color: #ffffff;
+                    }
+                }
+            }
+
+            .ui-datepicker-today {
+                a {
+                    border: 3px solid #adadad;
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+}
