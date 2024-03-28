@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="header.links" display="false" />
+
+        <move element="top.links" destination="header.panel"/>
+
+        <referenceBlock name="top.links">
+            <block class="Magento\Framework\View\Element\Html\Link" name="checkout-link" before="authorization-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Checkout</argument>
+                    <argument name="path" xsi:type="string" translate="true">checkout</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+        <referenceContainer name="header.panel">
+            <container name="header.panel.additional.right.menu" htmlTag="div" htmlClass="header-menu-mini-rightside"/>
+
+            <referenceBlock name="skip_to_content" display="false"/>
+
+            <block class="Magento\Theme\Block\Html\Header\Logo" name="logo-mobile" before="-">
+                <arguments>
+                    <argument name="logoPathResolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoPathResolver</argument>
+                    <argument name="logo_size_resolver" xsi:type="object">Magento\Theme\ViewModel\Block\Html\Header\LogoSizeResolver</argument>
+                    <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="header.container">
+            <block name="header-banner-khachidze" template="Khachidze_Theme::header-banner.phtml" />
+        </referenceContainer>
+
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Theme\Block\Html\Topmenu" name="catalog.topnav.khachidze" template="Magento_Theme::html/topmenu.phtml"
+                   ttl="3600" before="top.search"/>
+        </referenceContainer>
+
+        <move element="minicart" destination="header.panel.additional.right.menu" after="-" />
+        <move element="store_language" destination="header.panel.additional.right.menu" before="-" />
+        <move element="currency" destination="header.panel.additional.right.menu" before="store_language" />
+
+        <referenceBlock name="catalog.compare.link" display="false"/>
+
+        <move element="form.subscribe" destination="footer-container" before="-" />
+
+        <referenceBlock name="footer_links" display="false"/>
+        <referenceBlock name="copyright" display="false"/>
+        <referenceContainer name="footer-container">
+            <block name="footer-main-khachidze" template="Khachidze_Theme::footer-main.phtml" />
+        </referenceContainer>
+
+        <referenceContainer name="header.container">
+            <container name="header-menu-mobile" htmlTag="div" htmlClass="mobile-header-menu" before="-"/>
+        </referenceContainer>
+    </body>
+</page>

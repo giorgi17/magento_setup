@@ -1,0 +1,64 @@
+@import '_subscribe-additional';
+@import '_header_banner';
+@import '_menu_rightside';
+@import '_footer';
+@import  '_mobile_header_menu.less';
+@import 'extends/_footer_extends';
+@import 'extends/_minicart_extends';
+@import 'extends/_language_switcher_extends';
+@import 'extends/_search_extends';
+@import 'extends/_topmenu_extends';
+
+// Mixins
+.flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Top menu
+.navigation {
+    background: white;
+    ul {
+        li.level0 {
+            float: right;
+            margin-right: 20px !important;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.ui-icon-caret-1-e {
+    display: none !important;
+}
+
+.header.content {
+    .flex-center();
+    padding: 40px 20px;
+}
+
+.panel.wrapper {
+    background-color: white !important;
+
+    .panel.header {
+        padding: 0 !important;
+        display: flex;
+        justify-content: space-between !important;
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+}
+
+.header.links {
+    margin: 0 !important;
+    margin-right: auto !important;
+    float: left !important;
+    a {
+        color: #8f8f8f !important;
+    }
+}
+
+.counter.qty {
+    background-color: unset !important;
+    color: #8f8f8f !important;
+}
