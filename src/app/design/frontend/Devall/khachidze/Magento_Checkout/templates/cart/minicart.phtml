@@ -1,0 +1,105 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var $block \Magento\Checkout\Block\Cart\Sidebar */
+/** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
+?>
+
+<div data-block="minicart" class="minicart-wrapper">
+    <a class="action showcart" href="<?= $block->escapeUrl($block->getShoppingCartUrl()) ?>"
+       data-bind="scope: 'minicart_content'">
+
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15px" height="15px" viewBox="0 0 466.76 466.76" style="enable-background:new 0 0 466.76 466.76;" xml:space="preserve">
+              <g>
+                  <g>
+                      <circle cx="363.52" cy="402.852" r="56.32" />
+                  </g>
+              </g>
+                <g>
+                    <g>
+                        <path d="M453.632,97.7c-1.536-0.512-3.072-0.512-4.608-0.512h-330.24l-14.848-75.264C102.4,13.732,94.72,7.588,86.528,7.588H0
+                v35.84h71.68l53.248,267.776c1.536,8.192,9.216,14.336,17.408,14.336h256c8.192,0,15.36-5.632,17.408-13.312l50.176-192.512
+                C468.992,109.988,463.36,100.26,453.632,97.7z" />
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <circle cx="164.352" cy="402.852" r="56.32" />
+                    </g>
+                </g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+                <g></g>
+        </svg>
+
+        <span class="text"><?= $block->escapeHtml(__('My Cart')) ?></span>
+
+        <span class="counter-mobile">
+            <!-- ko text: getCartParam('summary_count')?.toLocaleString(window.LOCALE) --><!-- /ko -->
+        </span>
+
+        <span class="counter qty empty"
+              data-bind="css: { empty: !!getCartParam('summary_count') == false && !isLoading() },
+               blockLoader: isLoading">
+            <!-- ko text: getCartParam('summary_count')?.toLocaleString(window.LOCALE) --><!-- /ko --> item(s) -
+            <span class="price-wrapper" data-bind="html: getCartParam('subtotal_excl_tax')"></span>
+        </span>
+    </a>
+    <?php if ($block->getIsNeedToDisplaySideBar()):?>
+        <div class="block block-minicart"
+             data-role="dropdownDialog"
+             data-mage-init='{"dropdownDialog":{
+                "appendTo":"[data-block=minicart]",
+                "triggerTarget":".showcart",
+                "timeout": "2000",
+                "closeOnMouseLeave": false,
+                "closeOnEscape": true,
+                "triggerClass":"active",
+                "parentClass":"active",
+                "buttons":[]}}'>
+            <div id="minicart-content-wrapper" data-bind="scope: 'minicart_content'">
+                <!-- ko template: getTemplate() --><!-- /ko -->
+            </div>
+            <?= $block->getChildHtml('minicart.addons') ?>
+        </div>
+    <?php else: ?>
+        <?php $scriptString = <<<script
+            require(['jquery'], function ($) {
+                $('a.action.showcart').on('click', function() {
+                    $(document.body).trigger('processStart');
+                });
+            });
+script;
+        ?>
+        <?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false); ?>
+    <?php endif ?>
+    <?= /* @noEscape */ $secureRenderer->renderTag('script', [], 'window.checkout = ' .
+        /* @noEscape */ $block->getSerializedConfig(), false); ?>
+    <script type="text/x-magento-init">
+        {
+            "[data-block='minicart']": {
+                "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+        },
+        "*": {
+            "Magento_Ui/js/block-loader": "<?= $block->escapeJs(
+            $block->escapeUrl($block->getViewFileUrl('images/loader-1.gif'))
+        ) ?>"
+        }
+    }
+    </script>
+</div>

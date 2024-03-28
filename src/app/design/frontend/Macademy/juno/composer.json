@@ -1,5 +1,5 @@
 {
-    "name": "juno/magento2-theme-juno",
+    "name": "macademy/magento2-theme-juno",
     "description": "The Juno theme is built on top of the blank theme.",
     "require": {
         "php": "^7|^8",

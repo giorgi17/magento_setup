@@ -105,7 +105,7 @@
             "url": "https://repo.magento.com/"
         },
         {
-            "type": "git",
+            "type": "vcs",
             "url": "https://github.com/giorgi17/module-linkedin.git"
         }
     ],

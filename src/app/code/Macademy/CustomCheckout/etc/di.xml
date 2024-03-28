@@ -5,6 +5,7 @@
                type="Macademy\CustomCheckout\Plugin\SaveShippingAddressExtensionAttributes"/>
    </type>
     <type name="Magento\Quote\Model\Quote\Address\ToOrderAddress">
-        <plugin name="macademy_customcheckout_convert_quote_to_order_address" type="Macademy\CustomCheckout\Plugin\ConvertQuoteToOrderAddress"/>
+        <plugin name="macademy_customcheckout_convert_quote_to_order_address"
+                type="Macademy\CustomCheckout\Plugin\ConvertQuoteToOrderAddress"/>
     </type>
 </config>

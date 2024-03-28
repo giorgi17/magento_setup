@@ -1,0 +1,180 @@
+.block-minicart {
+    margin-top: 20px !important;
+    color: #555555 !important;
+    &:before, &:after {
+        display: none !important;
+    }
+
+    .minicart-items-wrapper {
+        border: 0;
+        width: 100%;
+
+        .product-item-pricing {
+            height: 35px;
+            .flex-center();
+            justify-content: flex-start;
+            gap: 5px;
+
+            .qty-number {
+                color: #a7a7a7;
+                font-size: 1.2rem;
+                padding-top: 4px;
+            }
+
+            .qty-price-divider {
+                color: #a7a7a7;
+                padding-top: 5px;
+                font-size: 1.2rem;
+            }
+
+            .price {
+                color: #7bae23 !important;
+            }
+        }
+
+        .product-item {
+            border: 0;
+        }
+    }
+
+    .block-content {
+        #btn-minicart-close {
+            display: none;
+        }
+
+        .product-item-details {
+            position: relative;
+
+            .product-item-name {
+                a {
+                    color: #444444;
+                }
+            }
+        }
+
+        .actions {
+            display: none;
+        }
+        .product.actions {
+            position: absolute;
+            right: 0;
+            top: 25px;
+            display: block;
+
+            .primary {
+                display: none;
+            }
+
+            .secondary {
+                display: block;
+                a {
+                    display: block;
+                    &:before {
+                        font-size: 12px;
+                        width: 16px;
+                        height: 16px;
+                        content: '\e616';
+                    }
+                }
+            }
+        }
+    }
+
+    .cart-bottom {
+        .flex-center();
+        margin-top: 35px;
+        justify-content: space-between;
+        .subtotal {
+            height: 82px;
+            margin: 0;
+            .price-container {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-evenly;
+                text-align: left;
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 2px;
+
+                .price-item {
+                    letter-spacing: 1px;
+                }
+
+                .total {
+                    .price-wrapper {
+                        color: #7bae23;
+                    }
+                }
+                .tax {
+                    .price-wrapper {
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+        .bottom-actions {
+            .cart-view-edit {
+                border: 2px solid #444444;
+                padding: 6px 16px;
+                a {
+                    text-transform: uppercase;
+                    color: #444444 !important;
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                }
+            }
+
+            .cart-checkout {
+                margin-top: 10px;
+                background-color: #7bae23;
+                padding: 8px 16px;
+                a {
+                    text-transform: uppercase;
+                    color: white !important;
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+// Responsive
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .counter-mobile {
+        display: none !important;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .minicart-wrapper {
+        &:hover {
+            background-color: unset !important;
+        }
+
+        .action.showcart {
+            position: relative;
+
+            .counter-mobile {
+                width: 12px;
+                height: 12px;
+                .flex-center();
+                position: absolute;
+                right: -5px;
+                bottom: 13px;
+                background-color: #7bae23;
+                border-radius: 50%;
+                font-size: 0.9rem;
+                color: white;
+            }
+        }
+
+        .block-minicart {
+            right: -60px !important;
+        }
+    }
+}

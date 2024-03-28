@@ -1,0 +1,231 @@
+.navigation {
+    .level0 {
+        .submenu {
+            .submenu {
+                left: 0 !important;
+            }
+        }
+    }
+
+    ul {
+        li {
+            ul {
+                li {
+                    a {
+                        &:hover {
+                            background: unset !important;
+                        }
+
+                        span {
+                            font-size: 1.1rem;
+                            color: #383838;
+                            font-weight: bold;
+                            letter-spacing: 2px;
+                            line-height: 19px;
+                        }
+                    }
+
+                    &.level1 {
+                        display: flex !important;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        flex-direction: column;
+
+                        &:before {
+                            content: '';
+                            display: block;
+                            width: 210px;
+                            height: 80px;
+                            background-color: #cccccc !important;
+                            margin-bottom: 30px;
+                        }
+
+                        &:not(:last-child) {
+                            &:after {
+                                content: '';
+                                display: block;
+                                width: 370px;
+                                height: 170px;
+                                background-color: #cccccc !important;
+                                margin-top: auto;
+                            }
+                        }
+
+                        a {
+                            padding-left: 0 !important;
+                        }
+
+                        ul.level1 {
+                            margin-bottom: 40px !important;
+
+                            li.level2 {
+                                a {
+                                    span {
+                                        font-weight: unset !important;
+                                        letter-spacing: unset !important;
+                                        color: #444444;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    ul.level1 {
+                        position: relative !important;
+                        right: 0 !important;
+                        border: unset !important;
+                        box-shadow: unset !important;
+                        padding: 0 !important;
+                    }
+                }
+
+                &[aria-expanded="true"] {
+                    margin-top: 400px !important;
+                    padding: 30px !important;
+                    display: flex !important;
+                    .flex-center();
+                    align-items: stretch;
+                    gap: 30px;
+
+                    .submenu {
+                        display: block !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.logo {
+    margin: 0;
+    margin-left: 10px;
+    transform: scale(1.5);
+}
+
+.panel.wrapper {
+    .panel.header {
+        .action.nav-toggle {
+            display: none !important;
+        }
+
+        .logo {
+            display: none;
+            transform: unset !important;
+        }
+    }
+}
+
+// Default menu hidden on desktop and new menu should be hidden on mobile
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .sections.nav-sections {
+        display: none !important;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .panel.wrapper {
+        display: block !important;
+
+        .panel.header {
+            margin-top: 30px !important;
+            margin-right: 20px !important;
+            flex-direction: unset !important;
+
+            .logo {
+                display: block !important;
+            }
+
+            .header-menu-mini-rightside {
+                margin-left: auto !important;
+
+                .switcher-language {
+                    display: none !important;
+                }
+
+                .minicart-wrapper {
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    .action.showcart {
+                        flex-direction: column;
+
+                        .counter.qty {
+                            display: none !important;
+                        }
+
+                        .text {
+                            width: unset !important;
+                            height: unset !important;
+                            position: relative !important;
+                            color: black !important;
+                            font-size: 0.9rem;
+                        }
+
+                        svg {
+                            fill: #444645 !important;
+                        }
+                    }
+                }
+            }
+
+            .header.links {
+                display: flex !important;
+                .flex-center();
+                margin: unset !important;
+
+                li {
+                    a {
+                        font-size: 0.9rem !important;
+                        color: #444645 !important;
+                    }
+                }
+
+                .link.wishlist {
+                    .flex-center();
+                    flex-direction: column;
+                    gap: 5px;
+
+                    .wishlist-mobile-icon {
+                        width: 15px;
+                        height: 15px;
+                        background-image: url('../images/icons/003-favorite.svg');
+                        background-repeat: no-repeat;
+                    }
+                }
+
+                .link.authorization-link {
+                    .flex-center();
+                    flex-direction: column;
+                    gap: 5px;
+
+                    .authorization-link-icon {
+                        width: 15px;
+                        height: 15px;
+                        background-image: url('../images/icons/forum-user.svg');
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+
+            .header.links > li:first-child, .header.links > li:last-child {
+                display: none !important;
+            }
+        }
+    }
+
+    .header.content {
+        padding: 0 !important;
+        flex-direction: column;
+
+        nav {
+            display: none !important;
+        }
+
+        .action.nav-toggle {
+            top: 30px !important;
+        }
+    }
+
+    .logo {
+        display: none !important;
+    }
+}

@@ -1,0 +1,45 @@
+.newsletter-subscribe-additional {
+    .flex-center();
+    gap: 25px;
+    color: white;
+
+    .newsletter-subscribe-additional__icon {
+        width: 50px;
+        height: 50px;
+        background-image: url('../images/icons/telegram.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .newsletter-subscribe-additional__texts {
+        .newsletter-subscribe-additional__title {
+            font-weight: bold;
+            font-size: 1.8rem;
+        }
+    }
+}
+
+// Responsive
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block.newsletter {
+        .content {
+            flex-wrap: wrap;
+            gap: 30px;
+
+            .form.subscribe {
+                width: 90% !important;
+
+                .field.newsletter {
+                    width: 100%;
+                }
+
+                .actions {
+                    width:  unset !important;
+                    .action.subscribe {
+                        width: unset !important;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,170 @@
+.footer-main-container {
+    width: 100%;
+    background-color: #2c2c2f;
+    color: white;
+    .flex-center();
+    flex-direction: column;
+
+
+    .footer-main {
+        height: 400px;
+        padding-top: 100px;
+        .flex-center();
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 120px;
+
+        .footer-section {
+            .footer-section-title {
+                font-size: 1.6rem;
+                margin-bottom: 30px;
+            }
+
+            .footer-section-items {
+                .footer-section-item {
+                    color: #c9cbd0;
+                    font-size: 1.3rem;
+                    &:not(:last-child) {
+                        margin-bottom: 20px;
+                    }
+                }
+
+                .footer-section-item-contact {
+                    .flex-center();
+                    justify-content: flex-start;
+                    color: #c9cbd0;
+                    font-size: 1.3rem;
+                    &:not(:last-child) {
+                        margin-bottom: 35px;
+                    }
+
+                    .footer-section-item-contact-icon-container {
+                        padding: 10px 15px 10px 0;
+                        border-right: 1px solid #5e5e5e;
+
+                        .footer-section-item-contact-icon {
+                            width: 16px;
+                            height: 16px;
+                            opacity: 0.7;
+
+                            &.phone {
+                                background-image: url('../images/icons/002-phone-receiver.svg');
+                                background-repeat: no-repeat;
+                            }
+
+                            &.email {
+                                background-image: url('../images/icons/025-mail.svg');
+                                background-repeat: no-repeat;
+                            }
+
+                            &.skype {
+                                background-image: url('../images/icons/003-skype-logo.svg');
+                                background-repeat: no-repeat;
+                            }
+                        }
+                    }
+
+                    .footer-section-item-contact-data {
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            .footer-section-items-table {
+                border-collapse: separate !important;
+                border-spacing: 4px;
+
+                tbody {
+                    tr {
+                        td {
+                            padding: 0 !important;
+
+                            .footer-section-items-table-item {
+                                width: 55px;
+                                height: 55px;
+                                background-color: #cccccc;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        margin-bottom: 80px;
+        min-width: 1200px;
+        font-size: 1.3rem;
+        .flex-center();
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .footer-bottom-left {
+            .footer-bottom-left-title {
+                font-weight: bold;
+                padding-bottom: 5px;
+            }
+
+            .footer-bottom-left-subtitle {
+                color: #8b8b8b;
+            }
+        }
+
+        .footer-bottom-right {
+            .flex-center();
+            gap: 10px;
+
+            .footer-bottom-right-icon {
+                width: 50px;
+                height: 42px;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                &.mastercard {
+                    background-image: url('../images/cards/mastercard.png');
+                }
+
+                &.paypal {
+                    background-image: url('../images/cards/paypal.png');
+                }
+
+                &.american-express {
+                    background-image: url('../images/cards/american-express.png');
+                }
+
+                &.maestro {
+                    background-image: url('../images/cards/maestro.png');
+                }
+
+                &.visa {
+                    background-image: url('../images/cards/visa.png');
+                }
+            }
+        }
+    }
+}
+
+// Responsive
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .footer-main-container {
+        padding-left: 20px;
+        width: unset !important;
+
+        .footer-main {
+            flex-wrap: wrap;
+            height: unset !important;
+            gap: 50px !important;
+            flex-direction: column;
+            padding-top: 50px !important;
+            width: 100% !important;
+        }
+
+        .footer-bottom {
+            margin-top: 50px;
+            min-width: unset !important;
+            flex-direction: column;
+            align-items: flex-start !important;
+            gap: 20px;
+        }
+    }
+}

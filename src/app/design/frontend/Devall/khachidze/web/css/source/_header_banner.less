@@ -1,0 +1,80 @@
+// Header banner
+.header-banner-khachidze-container {
+    width: 100%;
+    background-color: #7BAE23;
+    .flex-center();
+
+    .header-banner-khachidze {
+        height: 50px;
+        width: 100%;
+        max-width: 1180px;
+        .flex-center();
+        justify-content: space-between;
+
+        .header-banner-khachidze__item {
+            .flex-center();
+            font-size: 1.2rem;
+            color: white;
+            height: 100%;
+
+            .header-banner-khachidze__description {
+                .header-banner-khachidze__title {
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+                .header-banner-khachidze__subtitle {
+                    font-style: italic;
+                }
+            }
+        }
+
+        .header-banner-khachidze__icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 25px;
+
+            &.truck {
+                background-image: url('../images/icons/004-delivery-truck-silhouette.svg');
+                background-repeat: no-repeat;
+            }
+
+            &.gift {
+                background-image: url('../images/icons/003-gift.svg');
+                background-repeat: no-repeat;
+            }
+
+            &.lock {
+                background-image: url('../images/icons/006-padlock.svg');
+                background-repeat: no-repeat;
+            }
+        }
+
+        .header-banner-khachidze__divider {
+            width: 1px;
+            height: 15px;
+            background-color: white;
+            opacity: 0.5;
+        }
+    }
+}
+
+
+// Responsive
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .header-banner-khachidze-container {
+        .header-banner-khachidze {
+            flex-direction: column;
+            height: unset !important;
+            align-items: flex-start !important;
+
+            .header-banner-khachidze__item {
+                padding: 5px 20px;
+            }
+        }
+
+        .header-banner-khachidze__divider {
+            width: 100% !important;
+            height: 2px !important;
+        }
+    }
+}

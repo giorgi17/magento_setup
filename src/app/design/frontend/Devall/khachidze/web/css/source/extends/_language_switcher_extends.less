@@ -1,0 +1,68 @@
+// Language switcher
+.switcher-language-icon {
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-shrink: 0;
+    &.English {
+        background-image: url('../images/flags/en.png');
+    }
+    &.French {
+        background-image: url('../images/flags/fr.png');
+    }
+    &.German {
+        background-image: url('../images/flags/gr.png');
+    }
+}
+
+.switcher-trigger {
+    .flex-center();
+    display: flex !important;
+    gap: 5px;
+    &:after {
+        display: none !important;
+    }
+}
+
+.switcher-option {
+    .flex-center();
+}
+
+.switcher-dropdown {
+    min-width: 90px !important;
+    background-color: #f4f4f4 !important;
+    border: unset !important;
+    top: 30px !important;
+    left: -12px;
+    right: 0 !important;
+    margin: 0 !important;
+    .switcher-option {
+        padding: 10px 10px !important;
+        gap: 5px;
+        a {
+            padding: 0 !important;
+        }
+        &:hover {
+            background-color: #444645 !important;
+            a {
+                color: white !important;
+            }
+        }
+    }
+    &:before, &:after {
+        display: none !important;
+    }
+}
+
+.switcher-language {
+    .flex-center();
+    display: flex !important;
+    height: 47px;
+    min-width: 90px !important;
+    text-align: center;
+    &:hover {
+        background-color: #7bae23;
+        color: white !important;
+    }
+}
